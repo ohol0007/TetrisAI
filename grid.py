@@ -1,7 +1,7 @@
 class Grid:
     def __init__(self, width = 10, height =10):
         self.width = width
-        self.height = self.height
+        self.height = height
         self.grid = [[None for _ in range(width)] for _ in range(height)]
     
     def is_valid_position(self,piece):
@@ -20,7 +20,7 @@ class Grid:
     def clear_line(self):
         new_grid = [row for row in self.grid if not all(row)]
         lines_cleared = self.height -len(new_grid)
-        while new_grid < self.height:
-            new_grid.insert(0, [None]*self.grid)
+        while len(new_grid)  < self.height:
+            new_grid.insert(0, [None]* self.width)
         self.grid = new_grid
         return lines_cleared
