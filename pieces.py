@@ -121,7 +121,7 @@ class Piece:
         for i, row in enumerate(self.matrix):
             for j, val in enumerate(row):
                 if val:
-                    cells.append(self.y+i, self.x+j)
+                    cells.append((self.y + i, self.x + j))
         return cells
     
     def move(self, dx, dy):
